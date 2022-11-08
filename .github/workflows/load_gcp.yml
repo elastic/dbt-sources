@@ -1,0 +1,34 @@
+name: "BQ Scheduled Queries Load"
+
+on:
+  schedule:
+    - cron: "0 09 * * *" # UTC
+
+  workflow_dispatch:
+
+env:
+  KEYFILE: ${{ secrets.KEYFILE }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACTION_PAT }}
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ secrets.PY_VERSION }}
+          cache: "pip"
+      - name: Run Python Script
+        run: |
+          echo $KEYFILE > keyfile.json
+          python -m pip install --upgrade 'pip'
+          pip install -r ./arch/loads/gcp/requirements.txt
+          python ./arch/loads/gcp/app.py

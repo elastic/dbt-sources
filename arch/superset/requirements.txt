@@ -1,0 +1,13 @@
+apache-superset==1.5.1
+psycopg2
+pybigquery
+numpy
+pandas-gbq
+MarkupSafe==2.0.1
+# WTForms==2.3.0
+# psycopg2-binary
+# pillow
+# mysqlclient
+# statsd
+# statsd-client
+# Werkzeug==2.0.3

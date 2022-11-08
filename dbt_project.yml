@@ -1,0 +1,31 @@
+# Big Query Specific Configs
+# https://docs.getdbt.com/reference/resource-configs/bigquery-configs
+name: "elastic_dbt"
+version: "1.0.0"
+config-version: 2
+profile: "dbt"
+
+# =====
+# Paths
+# =====
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+model-paths: ["models"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
+clean-targets: ["target", "dbt_packages", "logs"]
+
+# =========
+# Variables (https://docs.getdbt.com/docs/building-a-dbt-project/building-models/using-variables)
+# =========
+vars:
+  "dbt_date:time_zone": "America/Los_Angeles"
+
+# =========
+# Model Configs (https://docs.getdbt.com/reference/model-configs)
+# =========
+models:
+
+# =========
+# Snapshots (https://docs.getdbt.com/reference/snapshot-configs)
+# =========

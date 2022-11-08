@@ -1,0 +1,37 @@
+gcloud services enable run.googleapis.com logging.googleapis.com cloudbuild.googleapis.com storage.googleapis.com pubsub.googleapis.com eventarc.googleapis.com
+
+gcloud components update
+
+gcloud auth login
+
+gcloud config set run/region us-west1
+gcloud config set run/platform managed
+gcloud config set eventarc/location us-west1
+
+SERVICE_ACCOUNT="$(gsutil kms serviceaccount -p elastic-enterprise-data-mgmt)"
+
+gcloud projects add-iam-policy-binding elastic-enterprise-data-mgmt \
+    --member="serviceAccount:${SERVICE_ACCOUNT}" \
+    --role='roles/pubsub.publisher'
+
+gsutil mb -l us-west1 gs://edmdatalake/
+
+gcloud builds submit --tag gcr.io/elastic-enterprise-data-mgmt/edmdatalake-events
+
+gcloud run deploy edmdatalake-events \
+    --image gcr.io/elastic-enterprise-data-mgmt/edmdatalake-events \
+    --allow-unauthenticated
+
+gcloud eventarc triggers create storage-events-trigger \
+    --destination-run-service=edmdatalake-events \
+    --destination-run-region=us-west1 \
+    --event-filters="type=google.cloud.storage.object.v1.finalized" \
+    --event-filters="bucket=edmdatalake" \
+    --service-account=559339203586-compute@developer.gserviceaccount.com
+
+gcloud eventarc triggers list --location=us-west1
+
+echo "Hello World" > random.txt
+gsutil cp random.txt gs://edm-datalake/random.txt
+
+gcloud logging read "resource.labels.service_name=edmdatalake-events AND textPayload:random.txt" --format=json

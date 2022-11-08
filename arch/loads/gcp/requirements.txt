@@ -1,0 +1,4 @@
+# pip freeze | xargs pip uninstall -y
+google-cloud-storage==2.5.*
+pyarrow==9.0.*
+pandas==1.4.*

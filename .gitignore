@@ -1,3 +1,21 @@
+target/
+dbt_packages/
+dbt-env/
+logs/
+.venv/
+.env
+venv/
+.vscode/
+*.ipynb
+.ipynb_checkpoints
+secrets.json
+.DS_Store
+*.zip
+zip/
+keyfile.json
+*.bak
+edr.log
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
