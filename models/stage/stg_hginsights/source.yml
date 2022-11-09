@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: raw_hginsights
-    tables:
-      - name: cv
-      - name: fivetran_audit
-      - name: iv
-      - name: sv

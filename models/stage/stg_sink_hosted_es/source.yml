@@ -1,6 +1,0 @@
-version: 2
-
-sources:
-  - name: raw_sink_hosted_es
-    tables:
-      - name: revpro_logs

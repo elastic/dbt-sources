@@ -1,7 +1,0 @@
-version: 2
-
-sources:
-  - name: raw_bevy
-    tables:
-      - name: attendees
-      - name: events

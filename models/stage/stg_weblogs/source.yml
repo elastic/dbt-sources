@@ -1,8 +1,0 @@
-version: 2
-
-sources:
-  - name: raw_weblogs
-    tables:
-      - name: weblogs
-      - name: weblogs_with_ip_company
-      - name: weblogs_with_ip_company_view
