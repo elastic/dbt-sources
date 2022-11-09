@@ -1,0 +1,18 @@
+
+with source as (
+
+    select * from {{ source('raw_netsuite', 'change_request_approve_process_map_history') }}
+
+),
+
+renamed as (
+
+    select
+        change_request_id,
+        process_id
+
+    from source
+
+)
+
+select * from renamed

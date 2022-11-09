@@ -1,0 +1,86 @@
+
+with source as (
+
+    select * from {{ source('raw_salesforce', 'jbcxm_cta_c') }}
+
+),
+
+renamed as (
+
+    select
+        id,
+        _fivetran_synced,
+        created_by_id,
+        created_date,
+        currency_iso_code,
+        is_deleted,
+        jbcxm_account_c,
+        jbcxm_age_c,
+        jbcxm_alert_reference_c,
+        jbcxm_assignee_c,
+        jbcxm_category_c,
+        jbcxm_close_source_c,
+        jbcxm_closed_date_c,
+        jbcxm_comments_c,
+        jbcxm_created_date_c,
+        jbcxm_ctagroup_c,
+        jbcxm_display_order_c,
+        jbcxm_draft_c,
+        jbcxm_dsrecommended_c,
+        jbcxm_dsscore_c,
+        jbcxm_dsscore_reason_c,
+        jbcxm_dsscored_on_c,
+        jbcxm_due_date_c,
+        jbcxm_dynamic_data_c,
+        jbcxm_entity_type_c,
+        jbcxm_event_reference_c,
+        jbcxm_final_milestone_c,
+        jbcxm_group_id_c,
+        jbcxm_gsclosed_overdue_c,
+        jbcxm_gsclosed_task_count_c,
+        jbcxm_gsdays_due_c,
+        jbcxm_gsdays_past_due_date_c,
+        jbcxm_gsdays_to_close_c,
+        jbcxm_gsdays_until_close_c,
+        jbcxm_gsdue_date_variance_c,
+        jbcxm_gsoverdue_c,
+        jbcxm_gsoverdue_type_c,
+        jbcxm_gspercent_complete_c,
+        jbcxm_is_assigned_to_group_c,
+        jbcxm_is_closed_c,
+        jbcxm_is_flagged_c,
+        jbcxm_is_recurring_c,
+        jbcxm_is_snoozed_c,
+        jbcxm_mile_stone_enabled_c,
+        jbcxm_milestone_c,
+        jbcxm_open_task_count_c,
+        jbcxm_original_due_date_c,
+        jbcxm_parent_c,
+        jbcxm_playbook_c,
+        jbcxm_priority_c,
+        jbcxm_properties_c,
+        jbcxm_reason_c,
+        jbcxm_relationship_c,
+        jbcxm_relationship_type_c,
+        jbcxm_rule_action_id_c,
+        jbcxm_snooze_reason_c,
+        jbcxm_snoozed_on_c,
+        jbcxm_snoozed_until_c,
+        jbcxm_source_c,
+        jbcxm_stage_c,
+        jbcxm_start_date_c,
+        jbcxm_success_criteria_c,
+        jbcxm_task_count_c,
+        jbcxm_type_c,
+        jbcxm_type_name_c,
+        last_activity_date,
+        last_modified_by_id,
+        last_modified_date,
+        name,
+        system_modstamp
+
+    from source
+
+)
+
+select * from renamed

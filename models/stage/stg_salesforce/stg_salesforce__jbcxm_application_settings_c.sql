@@ -1,0 +1,85 @@
+
+with source as (
+
+    select * from {{ source('raw_salesforce', 'jbcxm_application_settings_c') }}
+
+),
+
+renamed as (
+
+    select
+        id,
+        _fivetran_synced,
+        created_by_id,
+        created_date,
+        currency_iso_code,
+        is_deleted,
+        jbcxm_access_keys_c,
+        jbcxm_account_map_field_c,
+        jbcxm_adoption_aggregation_columns_c,
+        jbcxm_adoption_aggregation_type_c,
+        jbcxm_adoption_granularity_c,
+        jbcxm_adoption_measure_col_map_c,
+        jbcxm_alert_associated_c,
+        jbcxm_application_labels_c,
+        jbcxm_bopchurn_amounts_c,
+        jbcxm_calculate_asvby_term_c,
+        jbcxm_case_account_field_c,
+        jbcxm_case_object_name_c,
+        jbcxm_churn_by_bop_c,
+        jbcxm_cockpit_config_c,
+        jbcxm_cta_association_metadata_c,
+        jbcxm_data_anamolies_scheduler_info_c,
+        jbcxm_default_template_c,
+        jbcxm_disable_cust_update_c,
+        jbcxm_downsell_in_churn_c,
+        jbcxm_gainsight_version_c,
+        jbcxm_is_case_enabled_c,
+        jbcxm_is_lrmenabled_c,
+        jbcxm_is_nsadoption_enabled_c,
+        jbcxm_is_nsenabled_c,
+        jbcxm_is_nsexport_enabled_c,
+        jbcxm_is_nsreports_enabled_c,
+        jbcxm_licensed_user_not_in_adoption_graph_c,
+        jbcxm_licensed_user_not_in_adoption_grid_c,
+        jbcxm_migration_status_c,
+        jbcxm_milestone_associated_c,
+        jbcxm_npsassociated_c,
+        jbcxm_npsassociated_object_c,
+        jbcxm_npsassociated_object_display_c,
+        jbcxm_npsassociated_object_display_name_c,
+        jbcxm_npsassociated_object_key_c,
+        jbcxm_nschecks_config_c,
+        jbcxm_nscolumn_map_c,
+        jbcxm_nsdrill_down_config_c,
+        jbcxm_nsurl_c,
+        jbcxm_opportunity_close_date_c,
+        jbcxm_opportunity_rules_fields_c,
+        jbcxm_opportunity_stage_name_c,
+        jbcxm_org_time_zone_c,
+        jbcxm_page_size_c,
+        jbcxm_relationship_config_c,
+        jbcxm_renewal_based_churn_c,
+        jbcxm_renewal_downsell_in_churn_c,
+        jbcxm_revenue_band_c,
+        jbcxm_sftask_associated_c,
+        jbcxm_stats_c,
+        jbcxm_task_association_metadata_c,
+        jbcxm_task_fields_c,
+        jbcxm_transaction_associated_c,
+        jbcxm_usage_scheduler_info_c,
+        jbcxm_usage_utilization_calc_c,
+        jbcxm_uses_end_date_as_week_name_c,
+        jbcxm_week_starts_on_c,
+        jbcxm_wiget_config_c,
+        last_modified_by_id,
+        last_modified_date,
+        name,
+        owner_id,
+        system_modstamp
+
+    from source
+
+)
+
+select * from renamed

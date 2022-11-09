@@ -1,0 +1,29 @@
+# https://docs.getdbt.com/reference/warehouse-profiles/bigquery-profile
+
+config:
+    use_colors: False
+    send_anonymous_usage_stats: False
+
+dbt:
+  target: prod
+  outputs:
+    prod:
+      type: bigquery
+      method: service-account
+      project: elastic-bi
+      dataset: edm_dbt_admin
+      threads: 16
+      keyfile: ./keyfile.json
+      priority: interactive
+      job_execution_timeout_seconds: 300 # 5 minutes
+      location: US
+    ci:
+      type: bigquery
+      method: service-account
+      project: esbi-test
+      dataset: "{{ env_var('DATASET') }}"
+      threads: 4
+      keyfile: ./keyfile.json
+      priority: interactive
+      job_execution_timeout_seconds: 300 # 5 minutes
+      location: US

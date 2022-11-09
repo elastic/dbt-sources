@@ -1,0 +1,86 @@
+
+with source as (
+
+    select * from {{ source('raw_salesforce', 'pse_utilization_detail_c') }}
+
+),
+
+renamed as (
+
+    select
+        id,
+        _fivetran_synced,
+        created_by_id,
+        created_date,
+        currency_iso_code,
+        is_deleted,
+        last_modified_by_id,
+        last_modified_date,
+        name,
+        pse_group_c,
+        pse_hist_sch_billable_hours_c,
+        pse_hist_sch_credited_hours_c,
+        pse_hist_sch_excluded_hours_c,
+        pse_hist_sch_held_hours_c,
+        pse_hist_sch_non_billable_hours_c,
+        pse_historical_billable_hours_c,
+        pse_historical_calendar_hours_c,
+        pse_historical_credited_hours_c,
+        pse_historical_end_date_c,
+        pse_historical_excluded_hours_c,
+        pse_historical_non_billable_hours_c,
+        pse_historical_start_date_c,
+        pse_historical_utilization_target_hours_c,
+        pse_practice_c,
+        pse_region_c,
+        pse_resource_c,
+        pse_scheduled_billable_hours_c,
+        pse_scheduled_calendar_hours_c,
+        pse_scheduled_credited_hours_c,
+        pse_scheduled_end_date_c,
+        pse_scheduled_excluded_hours_c,
+        pse_scheduled_held_hours_c,
+        pse_scheduled_non_billable_hours_c,
+        pse_scheduled_start_date_c,
+        pse_scheduled_utilization_target_hours_c,
+        pse_template_key_c,
+        pse_time_period_c,
+        pse_time_period_type_c,
+        pse_type_c,
+        pse_utilization_calculation_c,
+        pse_utilization_target_hours_c,
+        system_modstamp,
+        elastic_net_schedule_hours_c,
+        elastic_utilization_billable_c,
+        elastic_utilization_credited_c,
+        elastic_utilization_non_billable_c,
+        elastic_utilization_revenue_generating_c,
+        historical_utilization_non_billable_c,
+        psa_report_month_c,
+        psa_report_remaining_capacity_c,
+        psa_report_remaining_capacity_hours_c,
+        psa_report_total_scheduled_hours_c,
+        pse_historical_utilization_billable_only_c,
+        pse_historical_utilization_c,
+        pse_historical_utilization_target_attainment_c,
+        pse_historical_utilization_target_c,
+        pse_is_report_master_c,
+        pse_scheduled_utilization_billable_only_c,
+        pse_scheduled_utilization_c,
+        pse_scheduled_utilization_target_attainment_c,
+        pse_scheduled_utilization_target_c,
+        pse_total_utilization_billable_only_c,
+        pse_total_utilization_c,
+        pse_utilization_target_attainment_c,
+        pse_utilization_target_c,
+        resource_schedule_allocation_c,
+        last_viewed_date,
+        last_referenced_date,
+        available_hours_c,
+        available_billable_hours_c
+
+    from source
+
+)
+
+select * from renamed

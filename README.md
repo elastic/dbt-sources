@@ -55,39 +55,7 @@ dbt specific:
 
 ## Project Organization
 
-[Tree](https://tree.nathanfriend.io/?s=(%27options!(%27f7cy4~fullP8h!false~trailingSlash4~rootDot4)~6(%276%27raw05lake%207d%20raw%7D%7Belastic-ent9prise-5-mgmtBstaging0staged%205B303%20tr7sform8ions%7DAmodels**marts%20*2fin7ce.*2hr.*2ga.%27)~v9sion!%271%27)*A2.0sem7tic%20lay9%7D0%20%7B2%20%203int9medi8e4!true5d8a6source!7an8at9erA%5CnB%7D*%01BA987654320.*)
-
-## Scheduling dbt build jobs
-
-To facilitate the scheduling of dbt jobs we utilize [Github Actions](https://docs.github.com/en/actions) to orchestrate our analytics engineering pipelines. You can add your model to one of the already scheduled builds by [tagging](https://docs.getdbt.com/reference/resource-configs/tags) it.
-
-Example of tagging:
-```
-Jinja:
-
-{{
-  config(
-    materialized = 'table',
-	transient = false,
-    tags=["daily"]
-    )
-}}
-```
-
-```
-YAML:
-
-models:
-  analytics:
-    +tags: "daily"
-```
-
-Current Tags:
-```
-hourly
-daily
-weekly
-```
+This dbt package is procedurally generated sources and staging models for consumption in the main dbt project.
 
 ## Resources
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)

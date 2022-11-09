@@ -1,0 +1,85 @@
+
+with source as (
+
+    select * from {{ source('raw_netsuite', 'fam_asset_type') }}
+
+),
+
+renamed as (
+
+    select
+        accounting_method_id,
+        asset_account_id,
+        asset_account_last_checked,
+        asset_lifetime,
+        asset_type_convention_1_id,
+        asset_type_convention_2_id,
+        asset_type_convention_3_id,
+        asset_type_convention_4_id,
+        asset_type_convention_5_id,
+        asset_type_convention_6_id,
+        asset_type_convention_7_id,
+        asset_type_convention_8_id,
+        asset_type_convention_9_id,
+        asset_type_depreciation_met__0,
+        asset_type_depreciation_met__1,
+        asset_type_depreciation_met__2,
+        asset_type_depreciation_met__3,
+        asset_type_depreciation_met__4,
+        asset_type_depreciation_met__5,
+        asset_type_depreciation_met__6,
+        asset_type_depreciation_met__7,
+        asset_type_depreciation_met_id,
+        asset_type_lifetime_1,
+        asset_type_lifetime_2,
+        asset_type_lifetime_3,
+        asset_type_lifetime_4,
+        asset_type_lifetime_5,
+        asset_type_lifetime_6,
+        asset_type_lifetime_7,
+        asset_type_lifetime_8,
+        asset_type_lifetime_9,
+        asset_type_residual_percenta_0,
+        asset_type_residual_percenta_1,
+        asset_type_residual_percenta_2,
+        asset_type_residual_percenta_3,
+        asset_type_residual_percenta_4,
+        asset_type_residual_percenta_5,
+        asset_type_residual_percenta_6,
+        asset_type_residual_percenta_7,
+        asset_type_residual_percentag,
+        asset_type_store_history,
+        convention_id,
+        custodian_id,
+        date_created,
+        depreciation_account_id,
+        depreciation_active_id,
+        depreciation_charge_account_id,
+        depreciation_rules_id,
+        description,
+        disposal_cost_account_id,
+        disposal_item_id,
+        fam_asset_type_extid,
+        fam_asset_type_id,
+        fam_asset_type_name,
+        financial_year_start_id,
+        include_in_reports,
+        inspection,
+        inspection_period,
+        is_inactive,
+        last_modified_date,
+        operating_lease,
+        parent_id,
+        residual_percentage,
+        revision_rules_id,
+        supplier,
+        warranty,
+        warranty_period,
+        write_down_account_id,
+        write_off_account_id
+
+    from source
+
+)
+
+select * from renamed

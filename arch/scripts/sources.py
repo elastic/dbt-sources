@@ -23,7 +23,7 @@ for row in df['stg_name']:
 subprocess.run("dbt clean && dbt deps", cwd="../..", stdout=subprocess.PIPE, shell=True)
 
 # compile dbt
-subprocess.run("dbt compile -t prod", cwd="../..", stdout=subprocess.PIPE, shell=True)
+subprocess.run("dbt compile --profiles-dir . -t prod", cwd="../..", stdout=subprocess.PIPE, shell=True)
 
 # copy compiled yml to each directory (overwrite if exists)
 directory = "../../target/compiled/elastic_dbt_sources/analyses"
@@ -40,4 +40,4 @@ for f in filelist:
     os.remove(os.path.join(cleanup_dir, f))
 
 # compile dbt
-subprocess.run("dbt compile -t prod", cwd="../..", stdout=subprocess.PIPE, shell=True)
+subprocess.run("dbt compile --profiles-dir . -t prod", cwd="../..", stdout=subprocess.PIPE, shell=True)

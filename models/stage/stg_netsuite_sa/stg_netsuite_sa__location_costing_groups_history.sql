@@ -1,0 +1,24 @@
+
+with source as (
+
+    select * from {{ source('raw_netsuite_sa', 'location_costing_groups_history') }}
+
+),
+
+renamed as (
+
+    select
+        location_costing_group_id,
+        _fivetran_deleted,
+        _fivetran_synced,
+        currency_id,
+        date_deleted,
+        location_costing_group_name,
+        memo,
+        partition_date
+
+    from source
+
+)
+
+select * from renamed
