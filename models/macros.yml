@@ -15,10 +15,3 @@ macros:
         description: This is automatically populated by the target context.
       - name: node
         description: This is automatically populated by the target context.
-  - name: test_rows_returned
-    description: the test is designed to fail if your query returns any rows
-    arguments:
-      - name: model
-        description: the model you want to test
-      - name: column_name
-        description: the column you want to test
