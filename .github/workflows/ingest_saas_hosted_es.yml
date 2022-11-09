@@ -9,7 +9,6 @@ on:
 env:
   PYTHONVERBOSE: "x"
   ES_HOST: ${{ secrets.ES_HOST }}
-  GOOGLE_APPLICATION_CREDENTIALS: ./keyfile.json
   KEYFILE: ${{ secrets.KEYFILE }}
 
 jobs:

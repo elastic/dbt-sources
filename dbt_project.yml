@@ -1,6 +1,6 @@
 # Big Query Specific Configs
 # https://docs.getdbt.com/reference/resource-configs/bigquery-configs
-name: "elastic_dbt"
+name: "elastic_dbt_sources"
 version: "1.0.0"
 config-version: 2
 profile: "dbt"
