@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: raw_gainsight
+    tables:
+      - name: subscription_telementry
+      - name: telemetry

@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: raw_gcp_itengdb_public
+    tables:
+      - name: fivetran_audit
+      - name: gsuite_groups

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_aviso
+    tables:
+      - name: deals
+      - name: forecast_management
+      - name: hierarchy

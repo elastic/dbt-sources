@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: raw_marketing
+    tables:
+      - name: activity_log

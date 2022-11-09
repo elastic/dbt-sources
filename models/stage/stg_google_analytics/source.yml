@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw_google_analytics
+    tables:
+      - name: goal_conversion_metrics_by_city
+      - name: goal_conversion_metrics_by_continent
+      - name: goal_conversion_metrics_by_country
+      - name: goal_conversion_metrics_by_region
+      - name: page_tracking_metrics_by_city
+      - name: page_tracking_metrics_by_continent
+      - name: page_tracking_metrics_by_continent_ns
+      - name: page_tracking_metrics_by_country
+      - name: page_tracking_metrics_by_region
+      - name: pageviews_by_blog
+      - name: pageviews_by_use_cases
+      - name: session_metrics_by_city
+      - name: session_metrics_by_continent
+      - name: session_metrics_by_country
+      - name: session_metrics_by_region
+      - name: user_metrics_by_city
+      - name: user_metrics_by_continent
+      - name: user_metrics_by_country
+      - name: user_metrics_by_region

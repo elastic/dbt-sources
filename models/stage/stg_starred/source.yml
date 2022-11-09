@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_starred
+    tables:
+      - name: elements
+      - name: elements_data
+      - name: properties
+      - name: responses

@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: raw_stripe
+    tables:
+      - name: balance_transaction
+      - name: card
+      - name: charge
+      - name: coupon
+      - name: customer
+      - name: customer_balance_transaction
+      - name: dispute
+      - name: dispute_balance_transaction
+      - name: early_fraud_warning
+      - name: fee
+      - name: file
+      - name: fivetran_audit
+      - name: invoice
+      - name: invoice_discount
+      - name: invoice_item
+      - name: invoice_line_item
+      - name: payment_intent
+      - name: payment_method
+      - name: payment_method_card
+      - name: payout
+      - name: plan
+      - name: product
+      - name: refund
+      - name: setup_intent
+      - name: subscription
+      - name: subscription_discount
+      - name: subscription_item
+      - name: transfer
+      - name: usage_record

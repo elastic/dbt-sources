@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw_pingboard
+    tables:
+      - name: employee_location
+      - name: employee_location_backup
+      - name: employee_location_backup_history
+      - name: employee_location_history
+      - name: groups
+      - name: groups_history
+      - name: users
+      - name: users_history

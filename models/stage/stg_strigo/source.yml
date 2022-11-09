@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_strigo
+    tables:
+      - name: class
+      - name: event
+      - name: ondemandcourse

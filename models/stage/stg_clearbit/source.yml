@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw_clearbit
+    tables:
+      - name: company
+      - name: company_backup
+      - name: domain_to_sfdc_ids
+      - name: domain_to_sfdc_ids_view
+      - name: ip_stack_backfill
+      - name: ip_to_company
+      - name: ip_to_company_view
+      - name: latest_ip_to_company
+      - name: new_ips_to_lookup_view
+      - name: new_ips_to_lookup_view_backfill
+      - name: reveal
+      - name: reveal_backup

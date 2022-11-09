@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: raw_cloud_marketplace
+    tables:
+      - name: billing_usage_detail
+      - name: rollup_billing_usage_detail
