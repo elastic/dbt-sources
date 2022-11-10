@@ -1,0 +1,14 @@
+version: 2
+sources:
+  - name: saas_hosted_es 
+    database: elastic-bi
+    schema: raw_saas_hosted_es
+    loader: logstash/Python
+
+    tables:
+      - name: cloud_invoice_lines
+      - name: cloud_invoice
+      - name: cloud_user
+      - name: billing_history
+      - name: account_history
+      - name: deployment_history

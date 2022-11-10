@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw_edm_platform_analytics
+    database: elastic-bi
+    schema: raw_edm_platform_analytics
+    loader: python
+    loaded_at_field: _fivetran_synced
+    freshness:
+      warn_after: { count: 4, period: hour }
+      error_after: { count: 8, period: hour }
+
+    tables:
+      - name: scheduled_queries_raw
+        description: data loaded from the google api to inventory all Scheduled Queries                            
+        external:
+          location: "gs://edm-datalake/scheduled_queries/*.parquet.gz"

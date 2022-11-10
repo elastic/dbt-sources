@@ -1,0 +1,79 @@
+version: 2
+
+sources:
+  - name: elastic_bi_information_schema
+    database: elastic-bi
+    schema: region-us.INFORMATION_SCHEMA
+
+    tables: 
+      - name: SCHEMATA
+        description: >
+          The INFORMATION_SCHEMA.SCHEMATA view contains one row for each dataset in a 
+          project to which the current user has access.
+      - name: JOBS_BY_PROJECT
+        description: >
+          The INFORMATION_SCHEMA.JOBS_TIMELINE view contains real-time BigQuery metadata 
+          by timeslice for all jobs submitted in the current project. This view contains 
+          currently running and completed jobs.
+      - name: TABLES
+        description: >
+          The INFORMATION_SCHEMA.TABLES view contains one row for each table or view in 
+          a dataset. The TABLES and TABLE_OPTIONS views also contain high-level information 
+          about views. For detailed information, query the INFORMATION_SCHEMA.VIEWS view.
+      - name: TABLE_SNAPSHOT
+        description: >
+          The INFORMATION_SCHEMA.TABLE_SNAPSHOTS view contains metadata about your table snapshots. 
+          For more information, see Introduction to table snapshots.
+      - name: TABLE_STORAGE_BY_PROJECT
+        description: >
+          The INFORMATION_SCHEMA.TABLE_STORAGE view provides a current snapshot of storage usage 
+          for tables and materialized views. When you query the INFORMATION_SCHEMA.TABLE_STORAGE 
+          view, the query results contain one row for each table or materialized view for the 
+          current project. The data in this table is not kept in real time, and might be delayed 
+          by a few seconds to a few minutes.
+      - name: VIEWS
+        description: >
+          The INFORMATION_SCHEMA.VIEWS view contains metadata about views.
+      - name: COLUMNS
+        description: >
+          The INFORMATION_SCHEMA.COLUMNS view contains one row for each column 
+          (field) in a table.
+
+
+  - name: elastic_enterprise_data_mgmt_information_schema
+    database: elastic-enterprise-data-mgmt
+    schema: region-us.INFORMATION_SCHEMA
+
+    tables: 
+      - name: SCHEMATA
+        description: >
+          The INFORMATION_SCHEMA.SCHEMATA view contains one row for each dataset in a 
+          project to which the current user has access.
+      - name: JOBS_BY_PROJECT
+        description: >
+          The INFORMATION_SCHEMA.JOBS_TIMELINE view contains real-time BigQuery metadata 
+          by timeslice for all jobs submitted in the current project. This view contains 
+          currently running and completed jobs.
+      - name: TABLES
+        description: >
+          The INFORMATION_SCHEMA.TABLES view contains one row for each table or view in 
+          a dataset. The TABLES and TABLE_OPTIONS views also contain high-level information 
+          about views. For detailed information, query the INFORMATION_SCHEMA.VIEWS view.
+      - name: TABLE_SNAPSHOT
+        description: >
+          The INFORMATION_SCHEMA.TABLE_SNAPSHOTS view contains metadata about your table snapshots. 
+          For more information, see Introduction to table snapshots.
+      - name: TABLE_STORAGE_BY_PROJECT
+        description: >
+          The INFORMATION_SCHEMA.TABLE_STORAGE view provides a current snapshot of storage usage 
+          for tables and materialized views. When you query the INFORMATION_SCHEMA.TABLE_STORAGE 
+          view, the query results contain one row for each table or materialized view for the 
+          current project. The data in this table is not kept in real time, and might be delayed 
+          by a few seconds to a few minutes.
+      - name: VIEWS
+        description: >
+          The INFORMATION_SCHEMA.VIEWS view contains metadata about views.
+      - name: COLUMNS
+        description: >
+          The INFORMATION_SCHEMA.COLUMNS view contains one row for each column 
+          (field) in a table.
