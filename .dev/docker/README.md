@@ -15,6 +15,6 @@ echo '{"your":"json"}' > keyfile.json
 ```
 - Debug your connection to BQ
 ```bash
-dbt debug --profiles-dir ./arch
+dbt debug --profiles-dir ./.dev
 ```
 - Create a branch or swap to a branch your were previously working on and start spitting hot dbt fire.

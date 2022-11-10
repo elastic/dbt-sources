@@ -33,5 +33,5 @@ jobs:
           echo $KEYFILE > keyfile.json
           export GOOGLE_APPLICATION_CREDENTIALS="./keyfile.json"
           python -m pip install --upgrade pip
-          pip install -r ./arch/loads/cloud_kpi/requirements.txt
-          python ./arch/loads/cloud_kpi/deployments.py
+          pip install -r ./.dev/loads/cloud_kpi/requirements.txt
+          python ./.dev/loads/cloud_kpi/deployments.py
