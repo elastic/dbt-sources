@@ -1,6 +1,0 @@
-version: 2
-
-sources:
-  - name: raw_zuora
-    tables:
-      - name: bi3_rc_lns
